@@ -1,0 +1,176 @@
+﻿<Page
+    x:Class="CalculatorTrip.TripCalculator"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CalculatorTrip"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid Background="#C97F2A">
+        <StackPanel Orientation="Horizontal">
+
+            <StackPanel MaxWidth="550">
+                <!--Interface Header-->
+
+                <TextBlock x:Name="title" Text="Car Rental Calculator" HorizontalAlignment="Center" VerticalAlignment="Top" FocusVisualPrimaryBrush="#FFFFF8F8" Foreground="Black" FontSize="30" FontWeight="Bold" SelectionHighlightColor="White" Margin="15" MinWidth="150"/>
+
+                <TextBlock x:Name="heading" Text="Rental Details:" Margin="15" FocusVisualPrimaryBrush="Black" Foreground="Black" FontSize="20" FontWeight="Bold" MinWidth="150"/>
+                <StackPanel Orientation="Horizontal">
+
+                    <RadioButton x:Name="toyotaRadioButton"  Content="Toyota" Margin="30" FocusVisualPrimaryBrush="Black" Foreground="Black" FontSize="15" MinWidth="150"/>
+                    <RadioButton x:Name="suvRadioButton"  Content="SUV" Margin="30" FocusVisualPrimaryBrush="Black" Foreground="Black" FontSize="15"  MinWidth="150"/>
+                    <RadioButton x:Name="vanRadioButton"  Content="Van" Margin="30" FocusVisualPrimaryBrush="Black" Foreground="Black" FontSize="15" MinWidth="150"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+
+                    <TextBlock  x:Name="daysRented" Text="Days rented:" Margin="15" MinWidth="150" FocusVisualPrimaryBrush="Black" Foreground="Black" FontSize="15"/>
+
+                    <TextBox x:Name="daysRentedTextBox" PlaceholderText="Insert here" Margin="15" MinWidth="150"  />
+
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+
+                    <TextBlock  x:Name="kmDriven" Text="Kilometers driven:" Margin="15" MinWidth="150" FocusVisualPrimaryBrush="Black" Foreground="Black" FontSize="15"/>
+
+                    <TextBox x:Name="kmDrivenTextBox" PlaceholderText="Insert here" Margin="15" MinWidth="150"/>
+
+                </StackPanel>
+
+
+                <StackPanel>
+
+                    <!--Price Calculations-->
+
+                    <TextBlock x:Name="calcHeading" Text="Calculations:" Margin="15"  FocusVisualPrimaryBrush="Black" Foreground="Black" FontSize="15" FontWeight="Bold" MinWidth="150"/>
+
+                    <StackPanel Orientation="Horizontal">
+
+                        <TextBlock  x:Name="vehicleChargeAmount" Text="Vehicle Charge:" Margin="15" MinWidth="150" FocusVisualPrimaryBrush="Black" Foreground="Black" FontSize="15"/>
+
+                        <TextBox x:Name="eVehicleChargeAmountTextBox" PlaceholderText="Displayed here" Margin="15" MinWidth="150"/>
+
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+
+                        <TextBlock  x:Name="extraKmAmount" Text="Extra Kilometers Charge:" Margin="15" MinWidth="150" FocusVisualPrimaryBrush="Black" Foreground="Black" FontSize="15"/>
+
+                        <TextBox x:Name="eExtraKmAmountTextBox" PlaceholderText="Displayed here" Margin="15" MinWidth="150"/>
+
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+
+                        <TextBlock  x:Name="finalAmount" Text="Final-amount:" Margin="15" MinWidth="150" FocusVisualPrimaryBrush="Black" Foreground="Black" FontSize="15"/>
+
+                        <TextBox x:Name="eFinalAmountTextBox" PlaceholderText="Displayed here" Margin="15" MinWidth="150"/>
+
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" >
+
+                        <!--"Calculate", "Clear", "Exit" Buttons-->
+
+                        <Button x:Name="calculate" Content="Calculate" Margin="10" Foreground="Black" FontSize="18" Background="#F7C56F" MinWidth="150" Click="calculate_Click"/>
+
+                        <Button x:Name="clear" Content="Clear" Margin="10" Foreground="Black" FontSize="18" Background="#F7C56F" MinWidth="150" Click="clear_Click"/>
+
+                        <Button x:Name="exit" Content="Exit" Margin="10" Foreground="Black" FontSize="18" Background="#F7C56F" MinWidth="150" Click="exit_Click"/>
+
+                    </StackPanel>
+
+                </StackPanel>
+
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical">
+
+                <StackPanel HorizontalAlignment="Right" Margin="10">
+
+                    <TextBlock x:Name="vehicleHeadingTextBlock" TextAlignment="Center" Text="Vehicles available:" MinWidth="400" FocusVisualPrimaryBrush="Black" Foreground="Black" FontSize="20" FontWeight="Bold" />
+
+                </StackPanel>
+
+                <StackPanel Orientation="vertical">
+
+                    <TextBlock x:Name="toyotaHeading" TextAlignment="Center" Text="Toyota" Margin="10" MinWidth="150" FocusVisualPrimaryBrush="Black" Foreground="Black" FontSize="15"/>
+
+                    <Image x:Name="toyota" Source="/Images/toyota.jpg" Margin="5" VerticalAlignment="Top" Height="157" MinWidth="150" Width="320" />
+
+                </StackPanel>
+
+                <StackPanel Orientation="Vertical">
+
+                    <TextBlock x:Name="suvHeading" TextAlignment="Center" Text="SUV" Margin="10" MinWidth="150" FocusVisualPrimaryBrush="Black" Foreground="Black" FontSize="15"/>
+
+                    <Image x:Name="suv" Source="/Images/suv.jpg" Margin="5" VerticalAlignment="Top" Height="157" MinWidth="150" Width="320" />
+
+                </StackPanel>
+
+                <StackPanel Orientation="vertical">
+
+                    <TextBlock x:Name="vanHeading" TextAlignment="Center" Text="Van" Margin="10" MinWidth="150" FocusVisualPrimaryBrush="Black" Foreground="Black" FontSize="15"/>
+
+                    <Image x:Name="van" Source="/Images/van.jpg" Margin="5" VerticalAlignment="Top" Height="157" MinWidth="150" Width="320" />
+
+                </StackPanel>
+
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" MaxWidth="430">
+
+                <!--Data Summary box-->
+                <StackPanel MaxWidth="300">
+                    <StackPanel HorizontalAlignment="Right" Margin="15">
+
+                        <TextBlock x:Name="infoTextBlock" TextAlignment="Left" Text="Car Rental Information:" FocusVisualPrimaryBrush="Black" Foreground="Black" FontSize="20" FontWeight="Bold" />
+
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+
+                        <TextBlock  x:Name="toyotaPrice" Text="Toyota Price:" Margin="15" MinWidth="150" FocusVisualPrimaryBrush="Black" Foreground="Black" FontSize="15"/>
+
+                        <TextBlock x:Name="toyotaPriceValue" Text="$35 per day" Margin="15" MinWidth="150" FocusVisualPrimaryBrush="Black" Foreground="Black" FontSize="15" />
+
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+
+                        <TextBlock  x:Name="suvPrice" Text="SUV Price:" Margin="15" MinWidth="150" FocusVisualPrimaryBrush="Black" Foreground="Black" FontSize="15"/>
+
+                        <TextBlock x:Name="suvPriceValue" Text="$65 per day" Margin="15" MinWidth="150" FocusVisualPrimaryBrush="Black" Foreground="Black" FontSize="15" />
+
+                    </StackPanel>
+
+
+
+                    <StackPanel Orientation="Horizontal">
+
+                        <TextBlock  x:Name="vanPrice" Text="Van Price:" Margin="15" MinWidth="150" FocusVisualPrimaryBrush="Black" Foreground="Black" FontSize="15"/>
+
+                        <TextBlock x:Name="vanPriceValue" Text="$75 per day" Margin="15" MinWidth="150" FocusVisualPrimaryBrush="Black" Foreground="Black" FontSize="15" />
+
+                    </StackPanel>
+
+                    <StackPanel>
+
+                        <TextBlock x:Name="milesFree" Text="200 km are included without charge &#x0a; during the rented period." Margin="15" MinWidth="150" FocusVisualPrimaryBrush="Black" Foreground="Black" FontSize="15" />
+
+                    </StackPanel>
+
+                    <StackPanel>
+
+                        <TextBlock x:Name="milesCharge" Text="For every kilometer over the 200 km, &#x0a; there will be a charge of $2." Margin="15" MinWidth="150" FocusVisualPrimaryBrush="Black" Foreground="Black" FontSize="15" />
+
+                    </StackPanel>
+
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+
+    </Grid>
+</Page>
