@@ -36,10 +36,10 @@
 			<!--buttons of each calculator-->
             <StackPanel Padding="30">
                 <Button x:Name="mathCalculatorButton" Content="🧮 Math Calculator 🧮" />
-                <Button x:Name="mortgageCalculatorButton" Content="🏡 Mortgage Calculator 🏡" />
-                <Button x:Name="currencyCalculatorButton" Content="💸 Currency Calculator 💸" />
-                <Button x:Name="tripCalculatorButton" Content="🚗 Trip Calculator 🚗" />
-                <Button x:Name="exitButton" Content="Exit " Background="#BFA7F2"/>
+                <Button x:Name="mortgageCalculatorButton" Content="🏡 Mortgage Calculator 🏡" Click="mortgageCalculatorButton_Click" />
+                <Button x:Name="currencyCalculatorButton" Content="💸 Currency Calculator 💸" Click="currencyCalculatorButton_Click" />
+                <Button x:Name="tripCalculatorButton" Content="🚗 Trip Calculator 🚗" Click="tripCalculatorButton_Click" />
+                <Button x:Name="exitButton" Content="Exit " Background="#BFA7F2" Click="exitButton_Click"/>
             </StackPanel>
             
         </StackPanel>

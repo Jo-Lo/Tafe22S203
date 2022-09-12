@@ -26,5 +26,25 @@ namespace GIT_Assignment_Main_Menu
         {
             this.InitializeComponent();
         }
-    }
+
+		private void mortgageCalculatorButton_Click(object sender, RoutedEventArgs e)
+		{
+			this.Frame.Navigate(typeof(MortgageCalculator.MortgageCalculator));
+		}
+
+		private void currencyCalculatorButton_Click(object sender, RoutedEventArgs e)
+		{
+			this.Frame.Navigate(typeof(git_assignment_currency_calculator.CurrencyCalculator));
+		}
+
+		private void tripCalculatorButton_Click(object sender, RoutedEventArgs e)
+		{
+			this.Frame.Navigate(typeof(CalculatorTrip.TripCalculator));
+		}
+
+		private void exitButton_Click(object sender, RoutedEventArgs e)
+		{
+			Application.Current.Exit();
+		}
+	}
 }
