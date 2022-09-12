@@ -1,0 +1,167 @@
+﻿<Page
+    x:Class="MortgageCalculator.MortgageCalculator"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MortgageCalculator"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    
+    <!--
+        Author: Julia Long
+        Sept. 2022
+    -->
+
+    <Page.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="#FFFFB80A" />
+            <Setter Property="Foreground" Value="black"/>
+            <Setter Property="BorderBrush" Value="WhiteSmoke" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="Width" Value="120" />
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="CornerRadius" Value="20" />
+            <Setter Property="FontFamily" Value="SamsungOneUI Medium Condensed"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="FontSize" Value="15"/>
+        </Style>
+
+        <Style TargetType="HyperlinkButton">
+            <Setter Property="BorderBrush" Value="WhiteSmoke" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="Width" Value="120" />
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="CornerRadius" Value="20" />
+            <Setter Property="FontFamily" Value="SamsungOneUI Medium Condensed"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="FontSize" Value="15"/>
+        </Style>
+        
+        <Style TargetType="TextBlock">
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Width" Value="185"/>
+            <Setter Property="TextAlignment" Value="Right"/>
+            <Setter Property="Margin" Value="0,0,10,0"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontFamily" Value="Bahnschrift"/>
+        </Style>
+        
+        <Style TargetType="TextBox">
+            <Setter Property="FontFamily" Value="Segoe UI Semibold" />
+            <Setter Property="Width" Value="200"/>
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="Foreground" Value="black"/>
+            <Setter Property="Background" Value="GhostWhite"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+        </Style>
+
+    </Page.Resources>
+    
+    <!-- GRADIENTS -->
+    <Grid>
+        <Grid.Background>
+            <!-- Gradient types:
+                    diagonal = 0, 0 ... horizontal = 0.5, 0 -->
+            <LinearGradientBrush StartPoint="0, 0.5" 
+                                 EndPoint="0.5, 1.5" >
+                <GradientStop Color="#1FDBD6" Offset="0.1"/>
+                <GradientStop Color="#FF1A5FFF" Offset="1" />
+            </LinearGradientBrush>
+        </Grid.Background>
+        <!--/ GRADIENTS -->
+
+        <StackPanel>
+            <StackPanel Background="#FF0A247F"  Margin="10">
+            <TextBlock Text="Mortgage Calculator"  
+                       Foreground="#FFFFB80A"
+                       FontSize="46" 
+                       HorizontalAlignment="Center" 
+                       Margin="0,20" 
+                       Width="600" 
+                       TextAlignment="Center" 
+                       FontFamily="Century" 
+                       FontWeight="ExtraBlack"
+                       />
+            <TextBlock Text="Estimate monthly interest rates and mortgage repayments with this easy-to-use Mortgage Calculator. Fill out the fields below and let the Mortgage Calculator do all the working out for you!"
+                       TextAlignment="Left"
+                       Width="460"
+                       Margin="0, 10, 0, 20"
+                       TextWrapping="Wrap"
+                       Foreground="GhostWhite"
+                       FontSize="16"
+                       FontFamily="Yu Gothic Light"
+                       />
+            </StackPanel>
+
+            <StackPanel Width="600" Height="480" Margin="0,25">
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock x:Name="principalBorrowTextBlock" Text="Borrowed Loan Amount $"/>
+                    <TextBox x:Name="principalBorrowTextBox" PlaceholderText="Loan amount required" Text="1000000" />
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock x:Name="yearsTextBlock" Text="Length of Loan in Years"/>
+                    <TextBox x:Name="yearsTextBox" PlaceholderText="Loan length required" Text="30"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock x:Name="monthsTextBlock" Text="and extra Months"/>
+                    <TextBox x:Name="monthsTextBox" PlaceholderText="0" Text="0"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock x:Name="yearlyInterestTextBlock" Text="Yearly Interest Rate"/>
+                    <TextBox x:Name="yearlyInterestTextBox" PlaceholderText="Yearly interest rate required" Text="3.5"/>
+                </StackPanel>
+                
+                <Button x:Name="calculateButton" Content="Calculate" Click="calculateButton_Click" Background="#FFFFB80A" />
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock x:Name="monthlyInterestTextBlock" 
+                               Text="Monthly Interest Rate" 
+                               FontSize="18"
+                               TextWrapping="Wrap"
+                               TextAlignment="Right"
+                                />
+                    <TextBox x:Name="monthlyInterestTextBox" 
+                             IsReadOnly="True"
+                             TextAlignment="Center"
+                             />
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock x:Name="monthlyRepayInterestTextBlock"
+                               Text="Monthly Repayments" 
+                               FontSize="18"
+                               TextWrapping="Wrap"
+                               TextAlignment="Right"
+                               />
+                    <TextBox x:Name="monthlyRepayTextBox" 
+                             IsReadOnly="True"
+                             TextAlignment="Center"
+                             />
+                </StackPanel>
+
+                <Button x:Name="clearButton" Content="Clear" Click="clearButton_Click" Background="#FF33DAD6"  />
+
+                <HyperlinkButton x:Name="exitButton" Content="Exit" Click="exitButton_Click" Background="Transparent" Foreground="#FF0A247F" />
+
+            </StackPanel>
+            <StackPanel>
+                <TextBlock Text="Julia Long, 2022"
+                           Width="1280"
+                           TextAlignment="Right"
+                           Foreground="white"
+                           Padding="10"
+                           VerticalAlignment="Bottom"/>
+            </StackPanel>
+        </StackPanel>
+        
+    </Grid>
+</Page>
