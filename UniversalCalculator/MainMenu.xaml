@@ -39,7 +39,8 @@
                 <Button x:Name="mortgageCalculatorButton" Content="🏡 Mortgage Calculator 🏡" Click="mortgageCalculatorButton_Click" />
                 <Button x:Name="currencyCalculatorButton" Content="💸 Currency Calculator 💸" Click="currencyCalculatorButton_Click" />
                 <Button x:Name="tripCalculatorButton" Content="🚗 Trip Calculator 🚗" Click="tripCalculatorButton_Click" />
-                <Button x:Name="exitButton" Content="Exit " Background="#BFA7F2" Click="exitButton_Click"/>
+				<Button x:Name="taxCalculatorButton" Content="💲 Tax Calculator 💲" Click="taxCalculatorButton_Click"/>
+				<Button x:Name="exitButton" Content="Exit " Background="#BFA7F2" Click="exitButton_Click"/>
             </StackPanel>
             
         </StackPanel>
