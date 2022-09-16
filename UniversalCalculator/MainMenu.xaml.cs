@@ -46,5 +46,10 @@ namespace GIT_Assignment_Main_Menu
 		{
 			Application.Current.Exit();
 		}
+
+		private void taxCalculatorButton_Click(object sender, RoutedEventArgs e)
+		{
+			//Tax calculator C# code will be developed later
+		}
 	}
 }
